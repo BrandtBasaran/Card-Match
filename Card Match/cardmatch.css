@@ -3,15 +3,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
-
-img {
-    height: 275px;
-    width: 183px;
-}
-
 
 .active {
     display: block;
+}
+
+.cardBack {
+    height: 275px;
+    width: 183px;
+    display: none; /* use display attribute, not 'visible */
+}
+
+.cardFront {
+    height: 275px;
+    width: 183px;    
 }

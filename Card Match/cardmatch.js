@@ -1,22 +1,32 @@
 // I think these varables should be collections? so maybe name them plural, eg, cardFronts?
-const cardBack = document.getElementById('cardBacks');
-const cardFront = document.getElementById('cardFronts');
-const card = document.querySelectorAll('.card');
+const cardBacks = document.getElementsByClassName('cardBack');
+const cardFronts = document.getElementsByClassName('cardFront');
 
+console.log('dump the variables to the console for debugging purpoases, so we can see at run time what the is stored in cardBacks and cardFronts');
+console.log(cardBacks);
+console.debug(cardFronts); // console is global oject with multiple functions, both 'log' and 'debug' will dump runtime output to the browser console
 
-cardFront.addEventListener('click', () => {
-        var img = document.getElementById(cardBack);
+for (let cardBack of cardBacks) {
+    console.log(cardBack);
+    cardBack.addEventListener('click', (fred) => {
+        console.debug(fred);
+        /* var img = document.getElementById(cardBack);
         var backimg = document.getElementById(cardFront);
         img.style.visibility = 'visible';
-        backimg.style.visibility = 'hidden';
-    }); 
+        backimg.style.visibility = 'hidden'; */
+    });
+}
 
-cardBack.addEventListener('click', () => {
-        var img = document.getElementById(cardFront);
+for (let cardFront of cardFronts) {
+    console.log(cardFront);
+    cardFront.addEventListener('click', (tom) => {
+        console.debug(tom);
+        /* var img = document.getElementById(cardFront);
         var backimg = document.getElementById(cardBack);
         img.style.visibility = 'hidden';
-        backimg.style.visibility = 'visible';
-}); 
+        backimg.style.visibility = 'visible'; */
+    }); 
+}
 
 //First Try Notes:
 
@@ -55,3 +65,9 @@ cardBack.addEventListener('click', () => {
             //Variable 'img' is then declared as having style.visible = visible
             //Variable 'backimg' is then declared as having style.visible = hidden
     
+/* 
+I messed you up on a few things, I'd like you to look at my changes by fetching my branch, run in a browswe while veiwing 
+dev tool condole, but not accept my chnages into main.  
+I like to talk through some stuff before you proceed, specifically the various types of loops 
+and collections, calbacks, and anoymous functons.
+*/
